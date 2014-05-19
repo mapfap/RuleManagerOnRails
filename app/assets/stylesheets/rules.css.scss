@@ -138,7 +138,7 @@ a:active {
 
 a.btn-back {
 	position: fixed;
-	top: 60px;
+	top: 5px;
 	right: 10px;
 	padding: 10px;
 	max-width: 150px;
@@ -273,5 +273,6 @@ re {
 }
 
 .green {
+	top: 60px !important;
 	background-color: #a47442 !important;
 }
