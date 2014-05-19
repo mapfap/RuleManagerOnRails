@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  rule: 1
+  user: MyText
+  new_if: MyText
+  new_then: MyText
+  new_tag: MyText
+  timestamp: 2014-05-19 22:07:23
+  ip: MyText
+
+two:
+  rule: 1
+  user: MyText
+  new_if: MyText
+  new_then: MyText
+  new_tag: MyText
+  timestamp: 2014-05-19 22:07:23
+  ip: MyText

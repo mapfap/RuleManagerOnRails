@@ -32,6 +32,18 @@ class RulesController < ApplicationController
     @rule.tag.gsub!("\r","")
   end
 
+  def log_rule(mode)
+    log = Changelog.new
+    log.user = current_user.email
+    log.rule = @rule.id
+    log.new_if = @rule.if
+    log.new_then = @rule.then
+    log.new_tag = @rule.tag
+    log.ip = request.remote_ip
+    log.mode = mode
+    log.save
+  end
+
   # POST /rules
   # POST /rules.json
   def create
@@ -42,6 +54,7 @@ class RulesController < ApplicationController
       @rule.author = current_user.email if user_signed_in?
 
       if @rule.save
+        log_rule("create")
         format.html { redirect_to @rule, notice: 'นำเข้ากฏใหม่เรียบร้อย' }
         format.json { render :show, status: :created, location: @rule }
       else
@@ -57,6 +70,7 @@ class RulesController < ApplicationController
     respond_to do |format|
       validate_rule
       if @rule.update(rule_params)
+        log_rule("update")
         format.html { redirect_to @rule, notice: 'แก้ไขกฏเรียบร้อย' }
         format.json { render :show, status: :ok, location: @rule }
       else
@@ -70,6 +84,7 @@ class RulesController < ApplicationController
   # DELETE /rules/1.json
   def destroy
     @rule.destroy
+    log_rule("delete")
     respond_to do |format|
       format.html { redirect_to rules_url, notice: 'ลบกฏเสร็จสิ้น.' }
       format.json { head :no_content }

@@ -1,0 +1,34 @@
+<%- title "Change Log" %>
+<table class="log">
+  <thead>
+    <tr>
+      <th>Log-ID</th>
+      <th>Mode</th>
+      <th>Rule</th>
+      <th>User</th>
+      <th>Timestamp</th>
+      <th>New if</th>
+      <th>New then</th>
+      <th>New tag</th>
+      <th>ip</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @changelogs.each do |changelog| %>
+      <tr>
+        <td><%= changelog.id %></td>
+        <td><%= changelog.mode %></td>
+        <td><%= changelog.rule %></td>
+        <td><%= changelog.user %></td>
+        <td><%= changelog.created_at %></td>
+        <td><%= changelog.new_if %></td>
+        <td><%= changelog.new_then %></td>
+        <td><%= changelog.new_tag %></td>
+        <td><%= changelog.ip %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>

@@ -8,8 +8,8 @@
     <% @rules.each do |rule| %>
       <% count_rule += 1 %>
       <div class="rule">
-        <div class="no"><%= count_rule %> -</div>
-        <!-- <div class="no"><%= rule.id %> -</div> -->
+        <!-- <div class="no"><%= count_rule %> -</div> -->
+        <div class="no"><%= rule.id %> -</div>
         <div class="tag"><%= rule.tag %></div>
         
         <%= link_to '', rule, method: :delete, data: { confirm: 'ต้องการลบกฎนี้?' }, class: "btn-trash" %>

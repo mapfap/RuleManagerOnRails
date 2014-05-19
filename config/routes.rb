@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :changelogs
+
   devise_for :users
   resources :rules
 
