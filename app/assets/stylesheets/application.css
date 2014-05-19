@@ -1,0 +1,118 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+body {
+	background-color: #8de592;
+	font-family: 'thaisans_neueregular','THSarabunNew';
+	font-size: 24px;
+	letter-spacing: 1px;
+}
+
+@font-face {
+    font-family: 'thaisans_neueregular';
+    src: url('thaisansneue-regular-webfont.eot');
+    src: url('thaisansneue-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('thaisansneue-regular-webfont.woff') format('woff'),
+         url('thaisansneue-regular-webfont.ttf') format('truetype'),
+         url('thaisansneue-regular-webfont.svg#thaisans_neueregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.userBar {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    padding: 5px;
+    background-color: #fefffb;
+}
+
+.header {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: #29b94a;
+    width: 100%;
+}
+
+.devise-form {
+    float: right;
+    margin-right: 20px; 
+    width: 30%;
+    /*border: 1px solid black;*/
+    padding: 10px;
+    display: inline-block;
+}
+
+.whiteLabel {
+    color: white !important;
+}
+
+.emailField {
+    width: 100%;
+}
+
+.passwordField {
+    width: 100%;
+}
+
+.welcome-form {
+    width: 60%;
+    font-size: 100px !important;
+    padding: 20px;
+    color: white;
+    vertical-align: center;
+    display: inline-block;
+    -moz-border-radius:5px;-webkit-border-radius:5px;border-radius:5px;
+}
+
+.welcomeText2 {
+    font-size: 30px !important;
+}
+
+.container {
+    width: 1000px;
+    padding: 10px;
+    border: 1px dashed white;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
+    vertical-align: center;
+
+}
+
+.notice {
+    width: 100%;
+    background-color: rgba(0,0,0,80);
+    color: #8dff63;
+}
+
+.alert {
+    width: 100%;
+    background-color: rgba(0,0,0,80);
+    color: #ffade1;
+}
+
+a.btn-logout {
+    padding-left: 4px;
+    padding-right: 4px;
+    font-weight: bold;
+    background-color: #25761e !important;
+}
+
+.wel-img {
+    width: 100%;
+}
+

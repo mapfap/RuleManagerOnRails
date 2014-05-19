@@ -1,0 +1,39 @@
+<center>
+<%- title "กฎของ " << @rule.tag %>
+<p id="notice"><%= notice %></p>
+
+      <div class="rule">
+        <div class="tag"><%= @rule.tag %></div>
+        
+        <%= link_to '', @rule, method: :delete, data: { confirm: 'ต้องการลบกฎนี้?' }, class: "btn-trash" %>
+        <%= link_to '', edit_rule_path(@rule), class: "btn-edit" %>
+        
+        <br><br>
+        <div class="if"><bl>if ( </bl>
+            
+            <% count_cond = 0 %>
+            <% all_cond = @rule.if.split(",") %>
+            <% all_cond.each do |cond| %>
+                <% count_cond += 1 %>
+                <%= cond.strip %>
+                <% if count_cond != all_cond.size %>
+                    <blu>or</blu>
+                <% end %>
+            <% end %>
+        <bl> ) </bl></div>
+
+        <br><br>
+        
+        <div class="then"><bl>then</bl>
+            <% @rule.then.split(",").each do |t| %>
+                <div class="result"><%= t.strip %></div>
+            <% end %>
+        </div><br>
+      
+      </div><br>
+
+
+<%= link_to 'กลับ', rules_path, class: "btn-back" %>
+
+</center>
+

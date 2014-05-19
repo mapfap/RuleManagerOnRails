@@ -1,0 +1,47 @@
+<%- title "จัดการกฎ" %>
+<center>
+<div class="rulePanel">
+
+    <%= link_to 'สร้างกฎใหม่', new_rule_path, class: "btn-back green" %>
+
+    <% count_rule = 0 %>
+    <% @rules.each do |rule| %>
+      <% count_rule += 1 %>
+      <div class="rule">
+        <div class="no"><%= count_rule %> -</div>
+        <!-- <div class="no"><%= rule.id %> -</div> -->
+        <div class="tag"><%= rule.tag %></div>
+        
+        <%= link_to '', rule, method: :delete, data: { confirm: 'ต้องการลบกฎนี้?' }, class: "btn-trash" %>
+        <%= link_to '', edit_rule_path(rule), class: "btn-edit" %>
+        
+        <br><br>
+        <div class="if"><bl>if ( </bl>
+            
+            <% count_cond = 0 %>
+            <% all_cond = rule.if.split(",") %>
+            <% all_cond.each do |cond| %>
+                <% count_cond += 1 %>
+                <%= cond.strip %>
+                <% if count_cond != all_cond.size %>
+                    <blu>or</blu>
+                <% end %>
+            <% end %>
+        <bl> ) </bl></div>
+
+        <br><br>
+        
+        <div class="then"><bl>then</bl>
+                <% rule.then.split(",").each do |t| %>
+                    <div class="result"><%= t.strip %></div>
+                <% end %>
+        </div><br>
+
+        <div class="author">
+            <%= rule.author %>
+        </div>
+      
+      </div><br>
+    <% end %>
+</div> 
+</center>
